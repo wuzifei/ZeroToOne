@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <link href="bootstrap.css" rel="stylesheet" />
+    <link href="font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <script type="text/javascript">
+    </script>
+    <style type="text/css">
+        .header-description p{font-size:13px;color:gray;}
+        .question{margin-bottom:20px;}
+        .question-content{margin:5px 10px;font-size:14px;}
+        .question-content input[type='text'],.question-content input[type='checkbox'],.question-content input[type='radio'],.question-content select:first-child,textarea{margin-left:20px;}
+        .question-content input,.question-content label:hover{color:red;cursor:pointer;}
+        .question-content .food-count-txt{width:25px;height:20px;margin:0 !important;padding:0; text-align :center;font-weight:bold;}
+        .food-count-minur,.food-count-plus{margin:0;padding:0;}
+        .comment-tag-box{margin-left:20px}
+        .comment-tag-box span,.worst-comment{margin:10px;display:inline-block;border:1px solid #CCC;border-radius:5px;padding:5px;background-color:white;color:#09f;}
+        .comment-tag-box span{margin-left:0px;}
+        {cursor:pointer;color:blue}
+        .add-image-img:hover{cursor:pointer;border:1px solid #09f;}
+        .worst-comment,user-name{color:gray;}
+
+        .comment-tag-box .active,.comment-tag-box span:hover{cursor: pointer; color:white;font-weight:bold;background-color: #09f;}
+    </style>
+<script src="javascript.js"></script>
+</head>
+<body>
+    <form class="">
+        <!--表单示例，这是一个答卷-->
+        <div class="container">
+            <div style="text-align:center;width:100%;">
+                <h3>午餐/晚餐外卖订单</h3>
+            </div>
+            <div>
+                <div class="header-description">
+                    <h4>午餐/晚餐外卖订单</h4>
+                    <p>本店位于XX区XX路XX号，仅接受电动车10分钟以内路程的订单；</p>
+                    <p>工作日<strong>10：00~11：30，13：00~17：00，19：00~22：00</strong>之间接受订单；</p>
+                    <p>联系电话：<strong>13065187972</strong></p>
+                </div>
+            </div>
+            <hr style="border-bottom:2px solid #09f;"/>
+            <div class="">
+                <div class="question">
+                    <h4 class="question-title">性别</h4>
+                    <div class="question-content">
+                        <input type="radio" value="男" name="male" id="male-radio" /><label for="male-radio">男</label>
+                        <input type="radio" value="女" name="male" id="female-radio" /><label for="female-radio">女</label>
+                    </div>
+                </div>
+                <div class="question">
+                    <h4 class="question-title">姓名</h4>
+                    <div class="question-content">
+                        <input type="text" value="" name="name" id="name" placeholder="请输入您的姓名" />
+                    </div>
+                </div>
+                <div class="question">
+                    <h4 class="question-title">电话</h4>
+                    <div class="question-content">
+                        <input type="text" value="" class="mobile" placeholder="请输入您的手机号码" />
+                    </div>
+                </div>
+                <div class="question">
+                    <h4 class="question-title">地址</h4>
+                    <div class="question-content">
+                        <select id="province">
+                            <option value="">省份</option>
+                            <option value="1">广东</option>
+                            <option value="2">江西</option>
+                        </select>
+                        <select id="city">
+                            <option value="">市</option>
+                            <option value="1">广州</option>
+                            <option value="2">深圳</option>
+                        </select>
+                        <select id="area">
+                            <option value="">区</option>
+                            <option value="1">宝安</option>
+                            <option value="2">南山</option>
+                        </select>
+                        <br />
+                        <textarea placeholder="请输入详细街道门牌号" id="street" rows="1" style="width:50%;margin-top:10px;"></textarea><span style="color:red;margin-top:12px;margin-left:5px;display:inline-block;">为了方便快递哥哥顺利找到您，请务必填写正确</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <h4 class="question-title">菜品</h4>
+                    <div class="question-content">
+                        <div class="food-box">
+                            <input type="checkbox" value="" class="food-name" id="food-1" /><label for="food-1">番茄炒蛋</label>
+                            <input type="button" class="btn btn-sm food-count-plus" value="加" />
+                            <input type="text" value="1" class="food-count-txt" />
+                            <input type="button" class="btn btn-sm food-count-minur" value="减" />
+                        </div>
+                        <div class="food-box">
+                            <input type="checkbox" value="" class="food-name" id="food-2" /><label for="food-2">辣椒炒肉</label>
+                            <input type="button" class="btn btn-sm food-count-plus" value="加" />
+                            <input type="text" value="1"class="food-count-txt" />
+                            <input type="button" class="btn btn-sm food-count-minur" value="减" />
+                        </div>
+                        <div class="food-box">
+                            <input type="checkbox" value="" class="food-name" id="food-3" /><label for="food-3">凉皮</label>
+                            <input type="button" class="btn btn-sm food-count-plus" value="加" />
+                            <input type="text" value="1"class="food-count-txt" />
+                            <input type="button" class="btn btn-sm food-count-minur" value="减" />
+                        </div>
+                        <div class="food-box">
+                            <input type="checkbox" value="" class="food-name" id="food-4" /><label for="food-4">肉夹馍</label>
+                            <input type="button" class="btn btn-sm food-count-plus" value="加" />
+                            <input type="text" value="1" class="food-count-txt" />
+                            <input type="button" class="btn btn-sm food-count-minur" value="减" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="question">
+                    <h4 class="question-title">特殊要求</h4>
+                    <div class="question-content">
+                        <textarea rows="5" style="width:50%;" id="special-requirements" placeholder="是否需要加辣、香菜，请在此填写您的要求"></textarea>
+                    </div>
+                </div>
+
+            </div>
+            <div style="text-align:center;width:100%;margin-top:50px;">
+                <h3>外卖评价</h3>
+            </div>
+            <hr style="border-bottom:1px dotted #09f;" />
+            <div class="question comment-box">
+                <h4 class="question-title">请对【辣椒炒肉】做出您的评论：</h4>
+                <div class="question-content">
+                    <div class="comment-tag-box">
+                        <span class="tag">干净卫生</span>
+                        <span>食材新鲜</span>
+                        <span>分量足</span>
+                        <span>味道好</span>
+                        <span>包装精美</span>
+                        <span>很实惠</span>
+                    </div>
+                    <textarea placeholder="说说哪里非常满意，帮大家选择" style="width:50%;" rows="5" id="comment-detail"></textarea>
+                    <div style="margin:20px;">
+                        <img src="http://image.smerp.cn/images/20170630/f72b40019dfcbe7c.jpg" class="comment-img" alt="" style="width:60px;height:60px;border:1px solid #CCC;" />
+                        <img src="http://image.smerp.cn/images/20170630/f72b40026ed080dc.jpg" class="comment-img" alt="" style="width:60px;height:60px;border:1px solid #CCC;" />
+                        <img src="http://image.smerp.cn/images/20170706/f72b3b3ae4c8ebbd.png" class="add-image-img" alt="点击添加图片" style="width:60px;height:60px;" />
+                    </div>
+                    <p style="margin-left:20px;"><a href="#">觉得这家店不错，分享给好朋友</a></p>
+                </div>
+            </div>
+
+            <div style="text-align:center;width:100%;margin-top:50px;">
+                <h3>评论信息</h3>
+            </div>
+            <hr style="border-bottom:1px dotted #09f;" />
+            <table class="table table-bordered table-hoverd">
+                <thead>
+                    <tr>
+                        <th>类别</th>
+                        <th>标签</th>
+                        <th>时间</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="worst-comment"><i class="fa  fa-thumbs-down"></i>差评</span>
+                        </td>
+                        <td class="comment-tag-box">
+                            <span>难吃</span>
+                            <span>有虫子</span>
+                        </td>
+                        <td>
+                            <span class="time-span">2017-07-06 22:22:22</span>
+                            <span class="user-name">匿名用户</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="worst-comment"><i class="fa  fa-thumbs-up"></i>好评</span>
+                        </td>
+                        <td class="comment-tag-box">
+                            <span>分量足</span>
+                            <span>味道好</span>
+                        </td>
+                        <td>
+                            <span class="time-span">2017-07-06 11:11:11</span>
+                            <span class="user-name">匿名用户</span>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <hr style="border-bottom:2px solid #09f;" />
+            <div id="model-json"></div>
+
+            <div style="text-align:center;">
+                <input type="button" class="btn btn-info" onclick="GetTheOrderInfo();" value="提交" />
+                <input type="reset" class="btn btn-danger" value="重置" />
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>
