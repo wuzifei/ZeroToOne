@@ -2,12 +2,12 @@ function GetTheOrderInfo(){
     var model = {male:"未选择性别"};
     var males = document.getElementsByName("male");
     //获取选中的性别
-    males.forEach(m=>{
+    for(var m in males){
         if(m.checked){
             model.male = m.value;
             return;  
         }
-    });
+    }
     //获取姓名 
     model.name = document.getElementsByName("name")[0].value;
     //获取电话
