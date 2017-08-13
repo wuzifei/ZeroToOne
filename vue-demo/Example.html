@@ -5,6 +5,7 @@
     <title></title>
 	<meta charset="utf-8" />
     <link href="..//css/bootstrap.css" rel="stylesheet" />
+    <link href="..//css/animate.css" rel="stylesheet" />
     <link href="http://libs.baidu.com/fontawesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <script type="text/javascript">
     </script>
@@ -115,68 +116,75 @@
                 <h4 class="question-title">请对【辣椒炒肉】做出您的评论：</h4>
                 <div class="question-content">
                     <div class="comment-tag-box" >
-                        <span v-for="(item,index) in comment.tags" v-on:click="ToggleCommentTag" v-bind:class="item.active?'active':''">{{item.tag}}</span>
+                        <span v-for="(item,index) in comment.tags" v-on:click="ToggleCommentTag" v-bind:class="{active:item.active}">{{item.tag}}</span>
                     </div>
                     <textarea placeholder="说说哪里非常满意，帮大家选择" v-model="comment.detail" style="width:50%;" rows="5" id="comment-detail"></textarea>
                     <div style="margin:20px;">
                         <img v-for="(item,index) in comment.imgs" v-bind:src="item" class="comment-img" alt="" style="margin:2px;width:60px;height:60px;border:1px solid #CCC;" />
                     </div>
-                    <p style="margin-left:20px;"><a href="#">觉得这家店不错，分享给好朋友</a></p>
+                    <p style="margin-left:20px;">
+                        <a href="#">觉得这家店不错，分享给好朋友</a>
+                        <br>
+                        <a href="javascript:void(0);" v-if="!showComments" v-on:click="showComments=!showComments"  style="color:red !important;">查看其它用户的评论</a>
+                        <a href="javascript:void(0);" v-else v-on:click="showComments=!showComments" style="color:red !important;">隐藏其它用户的评论</a>
+                    </p>
                 </div>
             </div>
+            <transition name="bounce">
+                <div v-if="showComments">
+                    <div style="text-align:center;width:100%;margin-top:50px;">
+                        <h3>评论信息</h3>
+                    </div>
+                    <hr style="border-bottom:1px dotted #09f;" />
+                    <table class="table table-bordered table-hoverd">
+                        <thead>
+                            <tr>
+                                <th>类别</th>
+                                <th>标签</th>
+                                <th>时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="worst-comment"><i class="fa  fa-thumbs-down"></i>差评</span>
+                                </td>
+                                <td class="comment-tag-box">
+                                    <span>难吃</span>
+                                    <span>有虫子</span>
+                                </td>
+                                <td>
+                                    <span class="time-span">2017-07-06 22:22:22</span>
+                                    <span class="user-name">匿名用户</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="worst-comment"><i class="fa  fa-thumbs-up"></i>好评</span>
+                                </td>
+                                <td class="comment-tag-box">
+                                    <span>分量足</span>
+                                    <span>味道好</span>
+                                </td>
+                                <td>
+                                    <span class="time-span">2017-07-06 11:11:11</span>
+                                    <span class="user-name">匿名用户</span>
+                                </td>
+                            </tr>
 
-            <div style="text-align:center;width:100%;margin-top:50px;">
-                <h3>评论信息</h3>
-            </div>
-            <hr style="border-bottom:1px dotted #09f;" />
-            <table class="table table-bordered table-hoverd">
-                <thead>
-                    <tr>
-                        <th>类别</th>
-                        <th>标签</th>
-                        <th>时间</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <span class="worst-comment"><i class="fa  fa-thumbs-down"></i>差评</span>
-                        </td>
-                        <td class="comment-tag-box">
-                            <span>难吃</span>
-                            <span>有虫子</span>
-                        </td>
-                        <td>
-                            <span class="time-span">2017-07-06 22:22:22</span>
-                            <span class="user-name">匿名用户</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span class="worst-comment"><i class="fa  fa-thumbs-up"></i>好评</span>
-                        </td>
-                        <td class="comment-tag-box">
-                            <span>分量足</span>
-                            <span>味道好</span>
-                        </td>
-                        <td>
-                            <span class="time-span">2017-07-06 11:11:11</span>
-                            <span class="user-name">匿名用户</span>
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
-
+                        </tbody>
+                    </table>
+                </div>
+            </transition>
             <hr style="border-bottom:2px solid #09f;" />
 
-            <div style="text-align:center;">
+            <div style="text-align:center;margin-bottom:30px;">
                 <input type="button" class="btn btn-info" onclick="GetTheOrderInfo();" value="提交" />
                 <input type="reset" class="btn btn-danger" value="重置" />
             </div>
         </div>
 
     </form>
-    <script src="vue-demo.js"></script>
+    <script src="vue-demo.animation.js"></script>
 </body>
 </html>
