@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <script src="./js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".more-link").hover(function(){
+                $(this).find(".more-box").show();
+            },function(e){
+                $(this).find(".more-box").hide();
+            });
+
+        });
+    </script>
+    <style type="text/css">
+        form{
+            text-align: center;
+        }
+        div{border:1px solid red;}
+        .top{
+            position: fixed;
+            top:0;
+            width: 100%;
+            height: 50px;
+            background-color: gray;
+        }
+        .middle{
+            height: 10000px;
+            width: 100%;
+            text-align: center;
+            margin: auto;
+            margin-top: 55px;
+            width: 1000px;
+            text-align: left;
+        }
+        .middle-left-content{
+            position: fixed;
+            top: 55px;
+            width:145px;
+        }
+        .middle-left,.middle-right{
+            float: left;
+            width: 145px;
+        }
+        .middle-center{
+            float: left;
+            height: 10000px;
+            border:1px solid blue;
+            width: 850px;   
+        }
+        .middle-center-left{
+            width: 600px;
+            float: left;
+            margin: 2px;
+        }
+        .middle-center-right{
+            width: 238px;
+            float: left;
+            margin: 2px;
+            height: 10000px;
+        }
+        .msg-box{
+            position: fixed;
+            right: 10px;
+            bottom: 0;
+            width: 150px;
+            height: 50px;
+        }
+        .more-link{
+            font-size: 16px;
+            font-weight:bold;
+            text-decoration: none;
+            padding: 10px;
+            padding-top: 5px;
+            display: inline-block;
+            margin-left: 450px;
+        }
+
+    </style>
+</head>
+<body>
+    <form class="">
+       <div class="top">
+           <h5>头部内容-滚动也不会消失</h5>
+       </div>
+       <div class="middle">
+           <div class="middle-left">
+                <div class="middle-left-content">
+                    左边栏滚动-也不会消失
+                </div>   
+            </div>
+           <div class="middle-center">
+               <div class="middle-center-left">
+                    <div>
+                        <span>有什么新鲜事想告诉大家？</span>
+                        <textarea style="width:98%;border:2px solid #CCC;height:100px;"></textarea>
+                        <div>
+                            <a href="javascript:void(0);" class="more-link">
+                                ...
+                                <div class="more-box" style="border:1px solid blue;width:100px;height:200px;position:absolute;z-index:9999;background-color:white;display:none;">
+                                    Nothing
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+                    中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+                    中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+                    中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+                    中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+                    中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+                    中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+                    中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+                    中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+                    中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+                    中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+                    中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+                    中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+                    中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容中间内容
+               </div>
+                <div class="middle-center-right">右边栏</div>
+            </div>
+       </div>
+       <div class="more-btn"></div>
+       <div class="msg-box">消息框</div>
+    </form>
+</body>
+</html>
